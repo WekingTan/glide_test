@@ -23,10 +23,10 @@ public class MainActivity extends AppCompatActivity {
         String url = "http://p1.pstatp.com/large/166200019850062839d3";     //Glide 可以自动判断传入的是动图还是静态图
         Glide.with(this)
                 .load(url)
-                .asBitmap()                                     //设定添加静态图；      .asGif() 设定添加动态图
                 .placeholder(R.drawable.chaoren)                //添加占位图
                 .error(R.drawable.error)                        //添加异常占位图
                 .diskCacheStrategy(DiskCacheStrategy.NONE)      //设置缓存机制
+                .override(100,100)                              //设置加载图片的像素大小
                 .into(imageView);
     }
 }
