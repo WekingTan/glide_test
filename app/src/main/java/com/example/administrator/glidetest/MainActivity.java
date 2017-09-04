@@ -20,9 +20,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loadImage(View view) {
-        String url = "http://img.mianbao99.com:88/newpic/201207/04/4ff3f0e439bf3.jpg";
+        String url = "http://p1.pstatp.com/large/166200019850062839d3";     //Glide 可以自动判断传入的是动图还是静态图
         Glide.with(this)
                 .load(url)
+                .asBitmap()                                     //设定添加静态图；      .asGif() 设定添加动态图
                 .placeholder(R.drawable.chaoren)                //添加占位图
                 .error(R.drawable.error)                        //添加异常占位图
                 .diskCacheStrategy(DiskCacheStrategy.NONE)      //设置缓存机制
